@@ -13,8 +13,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
         branch: gh-pages
-        folder: dist
-        ssh-key: ${{ secrets.PRJ_DEPLOY_KEY }}
       env:
         ACCESS_TOKEN: ${{ secrets.PRJ_ACCESS_TOKEN }}
         BRANCH: gh-pages
