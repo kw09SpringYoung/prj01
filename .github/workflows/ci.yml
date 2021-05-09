@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
-      
+      with:
+      deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      publish_dir: ./dist
+      github_token: ${{ secrets.PACCESS_TOKEN }}
       env:
         ACCESS_TOKEN: ${{ secrets.PACCESS_TOKEN }}
         BRANCH: gh-pages
